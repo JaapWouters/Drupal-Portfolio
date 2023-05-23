@@ -45,7 +45,7 @@
                             <h5 class="dot-title" style="color: var(--{{ type | replace({' ':''})}})">{{ method | trim | capitalize}} {% if type == 'other' %}{{ paragraph.entity.field_text.value | raw | striptags}}{% endif %}</h5>
                             </div>
                             {% if type != 'other' %}
-                        {{ paragraph.entity.field_text.value | raw | striptags}}
+                        {{ paragraph.entity.field_text.value | raw }}
                             {% endif %}
                         </div>
                         {% endif %}

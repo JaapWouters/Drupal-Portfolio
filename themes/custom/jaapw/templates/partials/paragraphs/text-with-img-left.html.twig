@@ -1,0 +1,12 @@
+<section class="section--paragraph">
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <img class="refrence-image" src="{{ paragraph.entity.field_media_left.entity.field_media_image.entity.uri.value | image_style('basic') }}" alt="">
+            </div>
+            <div class="col-6 offset-1">
+                {{ paragraph.entity.field_text.value | raw }}
+            </div>
+        </div>
+    </div>
+</section>

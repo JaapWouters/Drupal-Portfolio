@@ -1,0 +1,341 @@
+@import "import";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+h1{
+    font-family: $font-family-display;
+    line-height: $line-height-h1;
+}
+
+h2{
+    font-weight: 600;
+}
+
+h3{
+    font-weight: 600;
+}
+
+h4{
+    color: #667085;
+}
+
+h6{
+    margin: 0;
+}
+
+section{
+    margin-bottom: 50px;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.header{
+    .navbar {
+        padding: 0 80px;
+        background-color: #FFF9F6!important;
+        border-bottom: 1.5px solid #DEDEDE!important;
+        .img-fluid{
+            height: 50px;
+        }
+        .nav-link{
+            color: #667085;
+        }
+        .nav-item{
+            padding: 0px 30px;
+            font-weight: 600;
+        }
+        .nav-link.active{
+            color: #ECAF83;
+        }
+    }
+}
+    
+.menu--footer{
+    width: fit-content;
+    .navbar-nav{
+        display: flex;
+        flex-direction: row;
+    }
+    .nav-item{
+        width: fit-content;
+        padding-right: 30px;
+    }
+    .nav-link{
+        padding: 0;
+    }
+}
+
+.region-footer-first{
+    margin-bottom: 0;
+}
+
+.footer--contact{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 40px;
+    font-size: small;
+    
+}
+
+.site-footer__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1.5px solid #DEDEDE;
+    padding: 50px 0;
+}
+
+.footer--icon{
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    padding-right: 16px;
+    color: #000000;
+}
+
+.footer--title{
+    color: #737373;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.footer--text{
+    color: #000000;
+    margin-bottom: 0;
+}
+
+.clearfix{
+    &::after{
+        display: none;
+    }
+}
+
+// LANDING
+.badge{
+    color: #7A3C02;
+    padding: 8px;
+    background-color: #FDF4EC;
+    border-radius: 25px;
+}
+
+.firstname{
+    color: #000000; 
+}
+
+.lastname{
+    color: #ECAF83;
+}
+
+.intro{
+    color: #CFCFCF;
+    margin-bottom: 0.1rem;
+    font-weight: 600;
+}
+
+.section--landing{
+    display: flex;
+    align-items: center;
+    height: 80vh;
+    background-color: #FFF9F6;
+}
+
+.col-landing{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header-image{
+    width: 100%;  
+    height: auto;
+}
+
+// RECENT PROJECTS
+.section--recentprojects{
+    background-color: #ffffff;
+    padding: 50px 0px;
+}
+
+.title-center{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title-text{
+    font-size: large;
+}
+
+.project-card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.card-image{
+    width: 90%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-text{
+    width: 72%;
+    bottom: -40px;
+    padding: 26px;
+    border-radius: 8px;
+    position: absolute;
+    background-color: white;
+    box-shadow: 5px 5px 22px -9px rgba(0,0,0,0.65);
+}
+
+.btn{
+    color: white;
+    border-radius: 20px;
+}
+
+// ABOUT ME
+.section--aboutme{
+    background-color: #FFF9F6;
+    padding: 100px 0px;
+}
+
+.paragraph-title{
+    font-weight: 600;
+}
+
+.paragraph-text{
+    color: #667085;
+}
+
+.aboutme-image{
+    width: 100%;  
+    height: auto;
+    padding-right: 50px;
+    align-items: center;
+}
+
+// PROJECT PAGE
+.section--projects{
+    padding-top: 50px;
+}
+
+// PROJECT DETAILS
+.section--project-details{
+    padding: 100px 0px;
+}
+
+.project-image{
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;    
+}
+
+.section--1,
+.section--intro{
+    background-color: #FFF9F6;
+    padding: 50px 0px;
+}
+
+.section--2{
+    background-color: #ffffff;
+    padding: 50px 0px;
+}
+
+.refrence-image{
+    width: 100%;
+    height: 545px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cmd-icon{
+    width: 60px;
+    height: 60px;
+    margin: 20px 10px;
+    border-radius: 50%;
+    display: inline-block;
+    object-fit: cover;
+}
+
+.section--paragraph{
+    background-color: #FFF9F6;
+    padding: 50px 0px;
+    &:nth-child(odd){background-color: #ffffff;}
+}
+
+.views-row{
+    @include make-col-ready();
+    @include make-col(4);
+}
+
+// FILTERS LEARNING OUTCOMES
+details{
+    border: none;
+    }
+
+.form-check{
+    width: 32%;
+}
+
+.form-radios{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// READING GUIDE
+table, th, td{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.learning--outcome{
+    width: 333px;   
+}
+
+.description{
+    width: 600px;
+}
+
+.proof{
+    a{min-width: 50%;}
+}
+
+:root{
+    --field: #57c4c2;
+    --lab: #8986c0;
+    --library: #a9cf3c;
+    --workshop: #27c1f0;
+    --showroom: #ffd01c;
+    --steppingstones: #ec4a9b;
+    --other: #d1ccba;
+  }
+
+.dot-content{
+    display: flex;
+    align-items: flex-end;
+    align-items: center;
+}
+
+.dot-img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.dot-title{
+    margin-bottom: 0;
+}
+
+li{
+    list-style-position: inside;
+
+}
+
+.col-dot{
+padding-bottom: 12px;
+}

@@ -1,0 +1,162 @@
+<section class="section--project-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>
+                   {{ node.title.value | raw }}
+                </h2>
+                <p>
+                    {{ node.field_intro.value | raw }}
+                </p>
+            </div>
+            <div class="col-6">
+                <img class="project-image" src="{{ node.field_media.entity.field_media_image.entity.uri.value | image_style('basic')}}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section--intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <h3>Introduction</h3>
+                    {{ node.field_introduction.value | raw }}
+                    </div>
+                <div class="row">
+                    <h3>Research Questions</h3>
+                    {{ node.field_research_questions.value | raw }}
+                </div>
+                <div class="row">
+                <h3>CMD Methods</h3>
+                    {% if node.field_cmd_methods %}
+                    {% for paragraph in node.field_cmd_methods %}
+                    {% set paragraphType = paragraph.entity.type.value.0.target_id %}
+                
+                    {% if paragraph.entity.field_hidden.value == '1' %}
+                    {% else %}
+                        {% if paragraphType == 'cmd_method' %}
+                        <div class="col-12 col-dot">
+                            <div class="dot-content">
+                            {% set type = paragraph.entity.field_cmd_methods.value | split(':', 2)[0] | lower %}
+                            {% set method = paragraph.entity.field_cmd_methods.value | split(':', 2)[1] %}
+                            <img class="dot-img" src="/drupal/themes/custom/jaapw/images/logo-{{ type }}.png" alt="">
+                            <h5 class="dot-title" style="color: var(--{{ type | replace({' ':''})}})">{{ method | trim | capitalize}} {% if type == 'other' %}{{ paragraph.entity.field_text.value | raw | striptags}}{% endif %}</h5>
+                            </div>
+                            {% if type != 'other' %}
+                        {{ paragraph.entity.field_text.value | raw | striptags}}
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                
+                {% endif %}
+                </div>
+            </div>
+            <div class="col-5 offset-1">
+                <img class="refrence-image" src="{{ node.field_intro_image.entity.field_media_image.entity.uri.value | image_style('basic')}}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include directory ~ '/templates/partials/paragraphs.html.twig' %}
+
+{# 
+<section class="section--1">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h3>
+                    Introduction
+                </h3>
+                <p>
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <br>
+                <h3>
+                    Research Questions
+                </h3>
+                <p>
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <br>
+                <h3>
+                    CMD Methods
+                </h3>
+                <p>
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <img class="cmd-icon" src="/drupal/themes/custom/jaapw/images/logo-library.png" alt="">
+                <img class="cmd-icon" src="/drupal/themes/custom/jaapw/images/logo-field.png" alt="">
+                <img class="cmd-icon" src="/drupal/themes/custom/jaapw/images/logo-lab.png" alt="">
+                <img class="cmd-icon" src="/drupal/themes/custom/jaapw/images/logo-showroom.png" alt="">
+                <img class="cmd-icon" src="/drupal/themes/custom/jaapw/images/logo-workshop.png" alt="">
+                <img class="cmd-icon" src="/drupal/themes/custom/jaapw/images/logo-stepping-stones.png" alt="">
+            </div>
+            <div class="col-5 offset-1">
+                <img class="refrence-image" src="https://picsum.photos/2000/3000" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section--2">
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <img class="refrence-image" src="https://picsum.photos/2000/3000" alt="">
+            </div>
+            <div class="col-6 offset-1">
+                <h3>
+                    Explanation
+                </h3>
+                <p>
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                    <br><br>
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                    <br><br>
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                    <br><br>
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                    <br><br>
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section--1">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h3>
+                    Conclusion
+                </h3>
+                <p>
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <br>
+                <h3>
+                    Reflection
+                </h3>
+                <p>
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+                <br>
+                <h3>
+                    What will I do differently next time?
+                </h3>
+                <p>
+                    Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.
+                </p>
+            </div>
+            <div class="col-5 offset-1">
+                <img class="refrence-image" src="https://picsum.photos/2000/3000" alt="">
+            </div>
+        </div>
+    </div>
+</section> #}

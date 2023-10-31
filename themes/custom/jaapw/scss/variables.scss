@@ -4,9 +4,10 @@
 $primary-shade: rgb(255, 78, 46);
 $primary-light: lighten($primary-shade, 37%);
 $primary-dark: darken($primary-shade, 12%);
-$accent-shade: #ECAF83;
-$accent-light: lighten($accent-shade, 37%);
-$accent-dark: darken($accent-shade, 12%);
+$accent-shade: #CCD5AE;
+$link-shade: #DDA15E;
+$accent-light: lighten($link-shade, 37%);
+$accent-dark: darken($link-shade, 12%);
 // Reassign color vars to semantic color scheme
 $red: #dc3545;
 $yellow: #ffc107;
@@ -32,7 +33,7 @@ $inverse-color: $white;
 // Links
 //
 // Style anchor elements.
-$link-color: $accent-shade;
+$link-color: $link-shade;
 $link-decoration: none;
 $link-hover-color: $accent-dark;
 $link-hover-decoration: underline;

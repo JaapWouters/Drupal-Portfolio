@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'drupal/legacy-project',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'fee1d721f9a01169df1fb57d582c589de19708be',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -280,6 +280,15 @@
                 0 => '10.0.4',
             ),
         ),
+        'drupal/editor_advanced_link' => array(
+            'pretty_version' => '2.2.4',
+            'version' => '2.2.4.0',
+            'reference' => '2.2.4',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../modules/contrib/editor_advanced_link',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/entity_reference_revisions' => array(
             'pretty_version' => '1.10.0',
             'version' => '1.10.0.0',
@@ -326,9 +335,9 @@
             'dev_requirement' => false,
         ),
         'drupal/legacy-project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'fee1d721f9a01169df1fb57d582c589de19708be',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

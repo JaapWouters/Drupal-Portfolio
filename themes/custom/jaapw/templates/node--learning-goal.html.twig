@@ -1,0 +1,30 @@
+<section class="section--project-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>
+                   {{ node.title.value | raw }}
+                </h2>
+                <p>
+                    {{ node.field_intro.value | raw }}
+                </p>
+            </div>
+            {# <div class="owl-carousel">
+            <div> Your Content </div>
+            <div> Your Content </div>
+            <div> Your Content </div>
+            <div> Your Content </div>
+            <div> Your Content </div>
+            <div> Your Content </div>
+            <div> Your Content </div>
+            </div> #}
+            <div class="col-6">
+                <img class="project-image" src="{{ node.field_media.entity.field_media_image.entity.uri.value | image_style('basic')}}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include directory ~ '/templates/partials/paragraphs.html.twig' %}
+
+{# {{content.views_block__projects_block_3}} #}

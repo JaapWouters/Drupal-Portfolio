@@ -27,6 +27,7 @@
         "drupal/core-vendor-hardening": "^10.0",
         "drupal/editor_advanced_link": "^2.2",
         "drupal/entity_clone": "^2.0@beta",
+        "drupal/google_analytics": "^4.0",
         "drupal/paragraphs": "1.15",
         "drupal/twig_tweak": "^3.2"
     },

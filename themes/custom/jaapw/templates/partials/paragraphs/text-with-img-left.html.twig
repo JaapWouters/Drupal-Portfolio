@@ -5,12 +5,22 @@
                 {% if paragraph.entity.field_media_left | length > 1 %}
                 <div class="owl-carousel owl-theme carousel--media col--img--full">
                 {% for i in paragraph.entity.field_media_left %}
-                    <img src="{{ i.entity.field_media_image.entity.uri.value | image_style('basic') }}" alt="">
+                    {% if i.entity.field_media_oembed_video %}
+                            <iframe class="refrence-image" src="https://www.youtube.com/embed/{{ i.entity.field_media_oembed_video.value | slice(17)}}&autoplay=1&loop=1&mute=1&rel=0&enablejsapi=1"></iframe>
+                        {% endif %}
+                        {% if i.entity.field_media_image %} 
+                            <img src="{{ i.entity.field_media_image.entity.uri.value | image_style('basic') }}" alt="">
+                        {% endif %}
                 {% endfor %}
                 </div>
                 {% else %}
                 <div class="col--img--full">
-                <img class="refrence-image" src="{{ paragraph.entity.field_media_left.entity.field_media_image.entity.uri.value | image_style('basic') }}" alt="">
+                {% if paragraph.entity.field_media_left.entity.field_media_oembed_video %}
+                        <iframe class="refrence-image" src="https://www.youtube.com/embed/{{ paragraph.entity.field_media_left.entity.field_media_oembed_video.value | slice(17)}}"></iframe>
+                    {% endif %}
+                    {% if paragraph.entity.field_media_left.entity.field_media_image %}
+                        <img class="refrence-image" src="{{ paragraph.entity.field_media_left.entity.field_media_image.entity.uri.value | image_style('basic') }}" alt="">
+                    {% endif %}
                 </div>
                 {% endif %}
             </div>
